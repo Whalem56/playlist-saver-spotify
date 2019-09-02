@@ -1,0 +1,146 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
+  background: rgb(28, 28, 28);
+  color: white;
+  word-spacing: 0.1rem;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+}
+
+header {
+  margin-bottom: 3rem;
+}
+
+main {
+  padding-bottom: 100px;
+}
+
+#pageContainer {
+  position: relative;
+  min-height: 100vh;
+}
+
+#contentContainer {
+  padding-bottom: 12%;
+}
+
+#headerGrid {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  grid-column-gap: 2rem;
+  justify-items: center;
+  background: rgb(29, 185, 84);
+  width: 100%;
+  height: 10vh;
+  padding: 0.8rem;
+}
+
+#headerGrid h1 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  justify-self: left;
+}
+
+#headerGrid a {
+  justify-self: center;
+}
+
+#spotifyLogo {
+  height: 7vh;
+}
+
+#title {
+  font-size: 3.2rem;
+}
+
+#footerIcon {
+  width: 50px;
+}
+
+footer {
+  display: flex;
+  position: absolute;
+  height: 10%;
+  width: 100%;
+  bottom: 0;
+  background: black;
+  align-items: center;
+  justify-content: space-around;
+  padding: 0.8rem;
+}
+
+footer a {
+  display: block;
+  background: black;
+  height: 65%;
+}
+
+footer a img {
+  display: block;
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  width: 50%;
+  line-height: 2.5rem;
+  margin: auto;
+  text-align: center;
+}
+
+.container p {
+  text-align: left;
+  margin: 2rem;
+}
+
+.button {
+  display: inline-block;
+  background: rgb(29, 185, 84);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 19px 45px 19px;
+  margin-top: 2rem;
+  border-radius: 500px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.button:hover {
+  background: rgb(30, 215, 96);
+}
+
+@media (max-width: 1250px) {
+  #contentContainer {
+    padding-bottom: 20%;
+    /* Keep same as footer height */
+  }
+}
+
+@media (max-width: 875px) {
+  #contentContainer {
+    padding-bottom: 30%;
+    /* Keep same as footer height */
+  }
+}
+
+@media (max-width: 650px) {
+  #contentContainer {
+    padding-bottom: 35%;
+    /* Keep same as footer height */
+  }
+}
