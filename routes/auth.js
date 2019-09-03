@@ -11,6 +11,8 @@ const redirect_uri =
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
 
+console.log("redirect_uri: ", redirect_uri);
+
 // Routes Handlers
 router.get("/login", (req, res) => {
   const scope = "playlist-read-private playlist-read-collaborative";
@@ -59,7 +61,7 @@ router.get("/authenticate", async (req, res) => {
     // Try and get authentication token
     try {
       const response = await fetch(
-        "https://accounts.spotify.com/api/token" + querystring.stringify(body),
+        "https://accounts.spotify.com/api/token?" + querystring.stringify(body),
         fetchOptions
       );
       const data = await response.json();
@@ -69,6 +71,9 @@ router.get("/authenticate", async (req, res) => {
         );
       }
       // Success
+      // res.cookie(cookie_key_access_token, data.access_token, {
+      //   path: "/download"
+      // });
       res.cookie(cookie_key_access_token, data.access_token);
       res.status(300).redirect("/download"); // CHANGE TO DIFFERENT TEMPLATE
     } catch (err) {
