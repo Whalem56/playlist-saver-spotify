@@ -6,8 +6,7 @@ const querystring = require("querystring");
 const auth_state_length = 16;
 const cookie_key_auth = "spotify_auth_state";
 const cookie_key_access_token = "spotify_access_token";
-const redirect_uri =
-  process.env.URL + ":" + process.env.PORT + "/auth/authenticate";
+const redirect_uri = process.env.REDIRECT_URI;
 const client_id = process.env.CLIENT_ID;
 const client_secret = process.env.CLIENT_SECRET;
 

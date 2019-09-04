@@ -192,7 +192,7 @@ function download(output) {
 
 function errorHandler() {
   alert("An error has occurred. Please try logging in again.");
-  window.location.href = "http://192.168.1.8:9000/";
+  window.location.href = "https://playlist-saver-spotify.herokuapp.com/";
 }
 
 function onDownloadComplete() {
