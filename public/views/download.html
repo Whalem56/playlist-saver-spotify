@@ -1,12 +1,49 @@
-<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Download Page</title>
-  </head>
-  <body>
-    <script src="../dist/bundle.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Varela+Round&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/8368de034a.js"></script>
+  <link rel="stylesheet" href="../styles/style.css" />
+  <link rel="shortcut icon" type="image/png" href="../images/favicon-32x32.png" />
+  <title>Playlist Saver</title>
+</head>
+
+<body>
+  <div class="gradient">
+    <header class='header'>
+      <a href=""><i class="fab fa-spotify header__icon"></i></a>
+      <h1 class='header__title'>Playlist Saver for Spotify</h1>
+    </header>
+    <div class="container">
+      <main class='main'>
+        <section id='loading' class="section">
+          <p>Chatting with Spotify. This may take a few seconds.</p>
+          <div class="spinner">
+            <div class="bounce1"></div>
+            <div class="bounce2"></div>
+            <div class="bounce3"></div>
+          </div>
+        </section>
+        <section id='done-loading' class="section hide">
+          <p>If you liked my tool, feel free to check out my GitHub.</p>
+          <p>Enjoy your playlists!</p>
+        </section>
+      </main>
+    </div>
+  </div>
+  <footer class='footer'>
+    <div class="footer__links">
+
+      <a href=""><i class="fab fa-spotify"></i>
+      </a>
+      <a href=""><i class="fab fa-github"></i></a>
+      <a href=""><i class="fab fa-linkedin-in"></i></a>
+    </div>
+  </footer>
+  <script src="../dist/bundle.js"></script>
+</body>
+
 </html>

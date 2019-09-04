@@ -3,7 +3,10 @@ window.onload = () => {
 
   getPlaylistData(accessToken).then(playlistData => {
     const output = getOutput(playlistData);
-    download(output);
+    if (output) {
+      download(output);
+      onDownloadComplete();
+    }
   });
 };
 
@@ -135,7 +138,6 @@ async function getTracks(playlists, accessToken) {
       offset += limit;
     }
   }
-
   return playlistTrackMap;
 }
 
@@ -182,16 +184,21 @@ function download(output) {
     "data:text/plain;charset=utf-8," + encodeURIComponent(output)
   );
   element.setAttribute("download", "playlists.txt");
-
   element.style.display = "none";
   document.body.appendChild(element);
-
   element.click();
-
   document.body.removeChild(element);
 }
 
 function errorHandler() {
   alert("An error has occurred. Please try logging in again.");
   window.location.href = "http://192.168.1.8:9000/";
+}
+
+function onDownloadComplete() {
+  let loadingElem = document.querySelector("#loading");
+  loadingElem.classList.add("hide");
+
+  let doneLoadingElem = document.querySelector("#done-loading");
+  doneLoadingElem.classList.remove("hide");
 }
